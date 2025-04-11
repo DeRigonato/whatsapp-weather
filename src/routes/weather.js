@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getWeatherByCity, isRaining, willItRainToday } = require('../services/watherService.js');
-// chamada da função do zap
+const { sendWhatsAppMessage } = require('../services/messageService.js');
 
 router.get('/weather/:city', async (req, res) => {
   try {
